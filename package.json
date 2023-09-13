@@ -1,0 +1,20 @@
+{
+  "name": "js2-ca",
+  "version": "1.0.0",
+  "description": "This is my project for the JavaScript 2 course assignment in Noroff Front End Development studies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellie489/JS2-CA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ellie489/JS2-CA/issues"
+  },
+  "homepage": "https://github.com/ellie489/JS2-CA#readme"
+}
