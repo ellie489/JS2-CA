@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ellie489/JS2-CA/issues"
   },
-  "homepage": "https://github.com/ellie489/JS2-CA#readme"
+  "homepage": "https://github.com/ellie489/JS2-CA#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
 }
