@@ -18,7 +18,19 @@
   <body>
     <main>
       <h1>Log In Page</h1>
-      <p>If the account exist, a user can log in user a form here.</p>
+      <form class="row g-3">
+        <div class="col-md-4">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="col-md-4">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
     </main>
   </body>
 </html>
