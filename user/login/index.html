@@ -13,9 +13,46 @@
       defer
       src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
-    <script defer type="module" src="../../js/main.mjs"></script>
+    <script defer type="module" src="../../scripts/main.mjs"></script>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg bg-light mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">Be:Friend</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/user/feed/">Discover</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/">My posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/create-post/">Create Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/user/login/"
+                >Log In</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/register/">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <main>
       <h1>Log In Page</h1>
       <form class="row g-3">
