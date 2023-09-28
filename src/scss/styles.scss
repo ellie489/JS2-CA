@@ -1,1 +1,10 @@
+@import "_variables";
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.landing-box {
+    background-image: url(/images/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 75vh;
+}

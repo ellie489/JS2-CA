@@ -1,17 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Be:Friend is the social platform you never knew you needed.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Be:Friend is the social platform you never knew you needed."
+    />
     <title>Home | Be:Friend</title>
-    <link rel="stylesheet" href="/dist/css/styles.css">
-    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
     <script defer type="module" src="/js/main.mjs"></script>
-</head>
-<body>
-    <h1>Welcome to Be:Friend</h1>
-    <h2>You will never feel like you're the only cool person you know again.</h2>
-    <p>This is the landing page where a user can log in or choose to create a new user if not already registered.</p>
-</body>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Be:Friend</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/user/feed/">Discover</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/"
+                >My posts</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/create-post/">Create Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/login/">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/register/">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row rounded-4 p-4 shadow landing-box">
+          <div
+            class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
+          >
+            <h1 class="mb-4">Welcome to Be:Friend</h1>
+            <p>The social platform you never knew you needed.</p>
+            <h3>
+              You will never feel like you're the only cool person you know
+              again.
+            </h3>
+          </div>
+          <div class="col-md-6 right-box bg-light rounded-4 p-4">
+            <h2>Join our comminity now</h2>
+            <form class="mb-3" action="/user/register/">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" class="form-control" id="password" />
+              </div>
+              <button class="btn btn-lg btn-primary">Register</button>
+            </form>
+            <p>
+              Already have a user account? <a href="/user/login/">Log In</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
