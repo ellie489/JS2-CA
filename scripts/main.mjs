@@ -1,4 +1,1 @@
-import greeting from './login.mjs';
-
-console.log("Hello world.")
-greeting();
+console.log("Hello form main.js.")

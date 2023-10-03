@@ -16,7 +16,7 @@
     <script defer type="module" src="/js/main.mjs"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light mb-4">
+    <nav class="navbar sticky-top navbar-expand-lg bg-light mb-4">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Be:Friend</a>
         <button
@@ -61,34 +61,39 @@
           >
             <h1 class="mb-4">Welcome to Be:Friend</h1>
             <p>The social platform you never knew you needed.</p>
-            <h3>
-              You will never feel like you're the only cool person you know
-              again.
-            </h3>
           </div>
           <div class="col-md-6 right-box bg-light rounded-4 p-4">
-            <h2>Join our comminity now</h2>
+            <h2 class="mb-4">Join our comminity now</h2>
             <form class="mb-3" action="/user/register/">
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" />
+                <input type="text" class="form-control" id="username" required />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" />
+                <input type="email" class="form-control" id="email" required />
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="text" class="form-control" id="password" />
+                <input type="text" class="form-control" id="password" required />
               </div>
-              <button class="btn btn-lg btn-primary">Register</button>
+              <div class="d-grid mb-4">
+                <button class="btn btn-primary" type="submit">Register</button>
+              </div>
             </form>
             <p>
-              Already have a user account? <a href="/user/login/">Log In</a>
+              Already have an account? <a href="/user/login/">Log In</a>
             </p>
           </div>
         </div>
       </div>
     </main>
+    <div class="container fixed-bottom">
+      <footer class="py-3 my-4">
+        <div class="justify-content-center border-bottom pb-3 mb-3">
+        </div>
+        <p class="text-center ">© 2023 Be:Friend</p>
+      </footer>
+    </div>
   </body>
 </html>
