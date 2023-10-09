@@ -13,10 +13,11 @@
       defer
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
-    <script defer type="module" src="/js/main.mjs"></script>
+    <script defer type="module" src="/scripts/main.mjs"></script>
+    <script defer type="module" src="/scripts/register.mjs"></script>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg bg-light mb-4">
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg mb-4">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Be:Friend</a>
         <button
@@ -36,9 +37,7 @@
               <a class="nav-link" href="/user/feed/">Discover</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/user/"
-                >My posts</a
-              >
+              <a class="nav-link" href="/user/profile/">My posts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/user/create-post/">Create Post</a>
@@ -55,19 +54,26 @@
     </nav>
     <main>
       <div class="container d-flex justify-content-center align-items-center">
-        <div class="row rounded-4 p-4 shadow landing-box">
+        <div class="row rounded-4 p-4 shadow landing box">
           <div
-            class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
+            class="col-md-7 rounded-4 justify-content-center align-items-center flex-column left-box"
           >
-            <h1 class="mb-4">Welcome to Be:Friend</h1>
+            <h1>Welcome to Be:Friend</h1>
             <p>The social platform you never knew you needed.</p>
           </div>
-          <div class="col-md-6 right-box bg-light rounded-4 p-4">
+          <div
+            class="register-form col-md-5 right-box text-white rounded-4 p-4"
+          >
             <h2 class="mb-4">Join our comminity now</h2>
-            <form class="mb-3" action="/user/register/">
+            <form id="registration-form" class="mb-3">
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
@@ -75,24 +81,62 @@
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="text" class="form-control" id="password" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="password"
+                  required
+                />
               </div>
-              <div class="d-grid mb-4">
-                <button class="btn btn-primary" type="submit">Register</button>
+
+              <div class="d-grid my-4">
+                <button class="btn btn-primary py-2" type="submit">
+                  Register
+                </button>
+                <div
+                  id="registration-error"
+                  class="alert alert-danger mt-4"
+                  role="alert"
+                >
+                  Something went wrong. Please check the following and try
+                  again:
+                  <ul class="mt-2 px-3">
+                    <li>
+                      The username must not contain special symbols apart from
+                      underscore (_).
+                    </li>
+                    <li class="my-2">
+                      Only emails with stud.noroff.no or noroff.no can register.
+                    </li>
+                    <li>Password must be at least 8 characters.</li>
+                  </ul>
+                </div>
               </div>
+              <p>
+                Already have an account?
+                <a class="text-secondary" href="/user/login/">Log In</a>
+              </p>
             </form>
-            <p>
-              Already have an account? <a href="/user/login/">Log In</a>
-            </p>
+
+            <div
+              id="registration-success-message"
+              class="mb-3 alert alert-success"
+            >
+              Registration successful! You can now log in.
+            </div>
+            <div class="d-grid my-4">
+              <button id="login-button" class="btn btn-primary py-2">
+                Log In
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <div class="container fixed-bottom">
+    <div class="container">
       <footer class="py-3 my-4">
-        <div class="justify-content-center border-bottom pb-3 mb-3">
-        </div>
-        <p class="text-center ">© 2023 Be:Friend</p>
+        <div class="justify-content-center border-bottom pb-3 mb-3"></div>
+        <p class="text-center">© 2023 Be:Friend</p>
       </footer>
     </div>
   </body>
