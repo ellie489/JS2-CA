@@ -17,7 +17,7 @@
     <script defer type="module" src="../../scripts/main.mjs"></script>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg bg-light mb-4">
+    <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg bg-light mb-4">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Be:Friend</a>
         <button
@@ -37,7 +37,7 @@
               <a class="nav-link" href="/user/feed/">Discover</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/user/">My posts</a>
+              <a class="nav-link" href="/user/profile/">My posts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/user/create-post/">Create Post</a>
@@ -47,9 +47,7 @@
                 >Log In</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/register/">Register</a>
-            </li>
+
           </ul>
         </div>
       </div>
@@ -57,7 +55,7 @@
     <main>
       <main>
         <div class="container d-flex justify-content-center align-items-center">
-          <div class="row rounded-4 p-4 shadow login-box">
+          <div class="row rounded-4 p-4 shadow login box">
             <div
               class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
             >
@@ -65,7 +63,7 @@
             </div>
             <div class="col-md-6 right-box bg-light rounded-4 p-4">
               <h2 class="mb-4">Sign in to your account</h2>
-              <form class="my-3" action="/user/">
+              <form class="my-3" action="/user/feed/">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="email" required/>
@@ -74,12 +72,12 @@
                   <label for="password" class="form-label">Password</label>
                   <input type="text" class="form-control" id="password" required />
                 </div>
-                <div class="d-grid mb-4">
-                  <button class="btn btn-primary" type="submit">Log In</button>
+                <div class="d-grid my-4">
+                  <button class="btn btn-primary py-2" type="submit">Log In</button>
                 </div>
               </form>
               <p>
-                Don't have an account? <a href="/index.html">Register Here</a>
+                Don't have an account? <a class="text-secondary" href="/index.html">Register Here</a>
               </p>
             </div>
           </div>

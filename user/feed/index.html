@@ -10,10 +10,10 @@
       defer
       src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
-    <script defer type="module" src="../../js/main.mjs"></script>
+    <script defer type="module" src="../../scripts/main.mjs"></script>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg bg-light mb-2">
+    <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg bg-light mb-2">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Be:Friend</a>
         <button
@@ -35,7 +35,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/user/">My posts</a>
+              <a class="nav-link" href="/user/profile/">My posts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/user/create-post/">Create Post</a>
@@ -43,13 +43,12 @@
             <li class="nav-item">
               <a class="nav-link" href="/user/login/">Log In</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/register/">Register</a>
-            </li>
+
           </ul>
         </div>
       </div>
     </nav>
+    </div>
     <main>
       <div class="container p-4 rounded-3">
         <div class="row py-4">
@@ -57,7 +56,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-8">
-            <button class="btn btn-primary text-white mb-4 mx-2">All Posts</button>
+            <button class="btn btn-primary mb-4 mx-2">All Posts</button>
             <button class="btn btn-primary text-white mb-4 mx-2 disabled">Popular</button>
             <button class="btn btn-primary text-white mb-4 mx-2 disabled">New</button>
           </div>  
