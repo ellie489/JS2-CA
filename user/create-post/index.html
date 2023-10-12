@@ -50,14 +50,12 @@
     <main>
       <div class="container d-flex justify-content-center align-items-center">
         <div class="row rounded-4 p-4 shadow create-post box">
-          <div
-            class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
-          >        <h1 class="mb-4">Create new post</h1>
-          </div>
-          <div id="create-post-container" class="register-form col-md-6 right-box rounded-4 p-4">
+
+          <div id="create-post-container" class="new-post-form col-12 col-lg-9 col-xl-6 right-box rounded-4 p-4">
+            <h1 class="mb-4">Create new post</h1>
             <form id="create-post-form">
               <div class="my-3">
-                <label for="photoUrl" class="form-label">Photo URL:</label>
+                <label for="photoUrl" class="form-label">Photo url:</label>
                 <input type="url" class="form-control" id="photoUrl" required />
               </div>
               <div class="my-3">
@@ -66,12 +64,15 @@
               </div>
               <div class="my-3">
                 <label for="description" class="form-label">Description:</label>
-                <textarea class="form-control" id="description" rows="3" required></textarea>
+                <textarea class="form-control" id="description" rows="3"></textarea>
               </div>
             
               <button type="submit" class="btn btn-primary">Publish</button>
             </form>
             <div id="post-create-success"></div>
+          </div>          <div
+            class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
+          >        
           </div>
         </div>
       </div>
