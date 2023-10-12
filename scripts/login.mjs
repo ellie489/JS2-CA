@@ -1,22 +1,87 @@
-import { doFetch } from "./doFetch.mjs";
+import { API_URLS } from "./constants.mjs";
 
-const form = document.getElementById("login-form");
-const BASE_URL = "https://api.noroff.dev/api/v1/social";
-const LOGIN_URL = `${BASE_URL}/auth/login`;
+/**
+ * Gets user input from the login form.
+ * @returns {Object} containing user input (email and password).
+ */
+function getUserInput() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-async function handleLoginSubmit(userDetails) {
-  event.preventDefault();
-  console.log("Submit handled");
+  return {
+    email,
+    password,
+  };
+}
 
+/**
+ * Handles user login with an asynchronous API call.
+ * @param {Object} user - The user object containing login data (email and password).
+ */
+async function logInUser(user) {
   try {
-    const result = await doFetch(LOGIN_URL, {
+    const response = await fetch(API_URLS.API_URL_LOGIN, {
       method: "POST",
-      body: JSON.stringify(userDetails),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
     });
-    console.log({ result });
+
+    if (response.ok) {
+      const data = await response.json();
+      const accessToken = data.accessToken;
+      if (accessToken) {
+        // Store the JWT token in localStorage
+        localStorage.setItem("accessToken", accessToken);
+        console.log("JWT token stored in localStorage:", accessToken);
+
+        // Redirect to the feed page
+        window.location.href = "../feed"; // Replace with the actual feed page URL
+      } else {
+        console.error("JWT token not found in the API response");
+      }
+    } else {
+      // Login failed
+      // You can display an error message or handle the failure as needed.
+      console.error("Login failed");
+    }
   } catch (error) {
-    console.log(error);
+    console.error("Error:", error);
   }
 }
 
-form.addEventListener("submit", handleLoginSubmit);
+/**
+ * Clears any existing error messages.
+ */
+function clearErrorMessage() {
+  // Code to clear error messages goes here
+  // You can select the error message element and clear its content or hide it.
+}
+
+/**
+ * Handles the form submission event.
+ * @param {Event} event - The form submission event.
+ */
+function handleLogin(event) {
+  event.preventDefault();
+  clearErrorMessage();
+
+  const userInput = getUserInput();
+  logInUser(userInput);
+}
+
+// Add an event listener to the login form
+const loginForm = document.getElementById("login-form");
+loginForm.addEventListener("submit", handleLogin);
+
+let accessToken = localStorage.getItem("accessToken");
+
+const options = {
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+  },
+}
+
+const response = await fetch(`${API_URLS.API_BASE_URL}posts`, options)
+const data = await response.json();

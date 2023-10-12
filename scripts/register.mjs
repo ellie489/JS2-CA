@@ -92,5 +92,5 @@ const registrationForm = document.getElementById("registration-form");
 registrationForm.addEventListener("submit", handleRegistration);
 const loginButton = document.getElementById("login-button");
 loginButton.addEventListener("click", function () {
-  window.location.href = "../user/login"; // Replace with your login page's URL
+  window.location.href = "../user/login";
 });
