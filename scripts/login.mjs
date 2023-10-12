@@ -20,7 +20,7 @@ function getUserInput() {
  */
 async function logInUser(user) {
   try {
-    const response = await fetch(API_URLS.API_URL_LOGIN, {
+    const response = await fetch(API_URLS.LOGIN, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -83,5 +83,5 @@ const options = {
   },
 }
 
-const response = await fetch(`${API_URLS.API_BASE_URL}posts`, options)
+const response = await fetch(`${API_URLS.BASE}posts`, options)
 const data = await response.json();

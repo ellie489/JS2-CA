@@ -10,7 +10,7 @@
       defer
       src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
-    <script defer type="module" src="../../scripts/main.mjs"></script>
+    <script defer type="module" src="../../scripts/createPost.mjs"></script>
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top navbar-expand-lg mb-4">
@@ -43,9 +43,6 @@
                 >Create Post</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/login/">Log In</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -57,23 +54,24 @@
             class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
           >        <h1 class="mb-4">Create new post</h1>
           </div>
-          <div class="register-form col-md-6 right-box rounded-4 p-4">
-            <form>
+          <div id="create-post-container" class="register-form col-md-6 right-box rounded-4 p-4">
+            <form id="create-post-form">
               <div class="my-3">
-                <label for="formFile" class="form-label">Upload Photo</label>
-                <input class="form-control" type="file" id="formFile" />
+                <label for="photoUrl" class="form-label">Photo URL:</label>
+                <input type="url" class="form-control" id="photoUrl" required />
               </div>
               <div class="my-3">
                 <label for="title" class="form-label">Title:</label>
-                <input type="text" class="form-control " id="title" required />
+                <input type="text" class="form-control" id="title" required />
               </div>
               <div class="my-3">
                 <label for="description" class="form-label">Description:</label>
                 <textarea class="form-control" id="description" rows="3" required></textarea>
               </div>
-
-              <button type="submit" class="btn  btn-primary">Publish</button>
+            
+              <button type="submit" class="btn btn-primary">Publish</button>
             </form>
+            <div id="post-create-success"></div>
           </div>
         </div>
       </div>

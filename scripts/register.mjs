@@ -23,7 +23,7 @@ function getUserInput() {
  */
 
 function registerUser(user) {
-  fetch(`${API_URLS.API_URL_REGISTER}`, {
+  fetch(`${API_URLS.REGISTER}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

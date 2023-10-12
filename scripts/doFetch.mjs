@@ -1,68 +1,37 @@
-import { API_URLS } from "./constants.mjs";
-window.addEventListener("load", async () => {
-    const accessToken = localStorage.getItem("accessToken");
-  
-    if (!accessToken) {
-      window.location.href = "/user/login.html";
-      return;
-    }
-  
-    const headers = {
+/**
+ * Fetches data from an API endpoint using an access token.
+ *
+ * @param {string} accessToken - The access token for authorization.
+ * @param {string} apiEndpoint - The URL of the API endpoint to fetch data from.
+ * @returns {Promise<Object>} A promise that resolves to the fetched data.
+ * @throws {Error} Throws an error if the fetch request fails.
+ *
+ * @example
+ * const accessToken = "your-access-token";
+ * const apiEndpoint = "https://your.api.com/endpoint";
+ * try {
+ *   const data = await fetchData(accessToken, apiEndpoint);
+ *   console.log("Fetched data:", data);
+ * } catch (error) {
+ *   console.error("Error:", error.message);
+ * }
+ */
+export async function fetchData(accessToken, apiEndpoint) {
+  const headers = {
       Authorization: `Bearer ${accessToken}`,
-    };
-  
-    try {
+  };
 
-      const response = await fetch(API_URLS.API_URL_POSTS, {
-        headers,
+  try {
+      const response = await fetch(apiEndpoint, {
+          headers,
       });
-  
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Posts data:", data);
-  
-        const postsContainer = document.getElementById("posts-container");
-  
-        data.forEach((post) => {
-            if (data.media) {
-                const postElement = createPostElement(post);
-                postsContainer.appendChild(postElement);
-            }
-        });
 
+      if (response.ok) {
+          return response.json();
       } else {
-        console.error("Failed to fetch posts");
+          throw new Error("Something went wrong.");
       }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  });
-  
-  // Function to create HTML element for a post
-  function createPostElement(post) {
-    const { title, media, body } = post;
-  
-    // Create a post container element
-    const postContainer = document.createElement("div");
-    postContainer.classList.add("post");
-  
-    // Create elements for post details (e.g., id, title, body)
-    const postIdElement = document.createElement("img");
-    postIdElement.classList.add("post-id");
-    postIdElement.url = media.url;
-  
-    const postTitleElement = document.createElement("h2");
-    postTitleElement.classList.add("post-title");
-    postTitleElement.textContent = title;
-  
-    const postBodyElement = document.createElement("p");
-    postBodyElement.classList.add("post-body");
-    postBodyElement.textContent = body;
-  
-    // Append elements to the post container
-    postContainer.appendChild(postIdElement);
-    postContainer.appendChild(postTitleElement);
-    postContainer.appendChild(postBodyElement);
-  
-    return postContainer;
+  } catch (error) {
+      throw error;
   }
+}
