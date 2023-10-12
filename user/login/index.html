@@ -17,7 +17,7 @@
     <script defer type="module" src="../../scripts/main.mjs"></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg bg-light mb-4">
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg mb-4">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Be:Friend</a>
         <button
@@ -61,9 +61,9 @@
             >
               <h1 class="mb-4 text-white">Welcome back!</h1>
             </div>
-            <div class="col-md-6 right-box bg-light rounded-4 p-4">
+            <div class="login-form col-md-6 right-box rounded-4 p-4">
               <h2 class="mb-4">Sign in to your account</h2>
-              <form class="my-3" action="/user/feed/">
+              <form id="login-form" class="my-3" action="/user/feed/">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="email" required/>

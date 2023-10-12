@@ -10,16 +10,16 @@
   body {
     font-family: "Geneva", serif;
   }
-.landing.box {
+.landing.box, .login.box {
     background-image: url(/images/111.jpg);
 }
-.landing.box h1, .create-post.box h1, .login.box h1  {
+.landing.box h1 {
     font-size: 8rem;
     font-family: "DIN Condensed", serif;
 }
-
-.login.box {
-    background-image: url(/images/222.jpg);
+.create-post.box h1, .login.box h1 {
+    font-size: 9rem;
+    font-family: "DIN Condensed", serif;
 }
 
 .create-post.box {
@@ -47,7 +47,7 @@ body, nav {
     background-color: #311ca5;
     color: white;
 }
-.register-form {
+.register-form, .login-form {
     background-color: #090741f1;
 }
 

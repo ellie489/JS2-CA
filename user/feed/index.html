@@ -11,9 +11,11 @@
       src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
     <script defer type="module" src="../../scripts/main.mjs"></script>
+    <script defer type="module" src="../../scripts/doFetch.mjs"></script>
+    <script defer type="module" src="../../scripts/feed.mjs" ></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg bg-light mb-2">
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg mb-2">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">Be:Friend</a>
         <button
@@ -66,92 +68,10 @@
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>    
           </div>
-  
-
         </div>
         <div class="row g-4 mb-5">
           <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
-              <img src="/images/8.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
+            <div id="posts-container" class="card">
             </div>
           </div>
         </div>
@@ -166,3 +86,11 @@
     </div>
   </body>
 </html>
+             <!-- <img src="/images/8.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div> -->
