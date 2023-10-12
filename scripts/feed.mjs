@@ -32,7 +32,6 @@ function createPostElement(post) {
     return postContainer;
 }
 
-// Function to populate an existing HTML element with posts
 function populatePostsContainer(postsData) {
     const postsWithImages = postsData.filter((post) => post.media);
 
@@ -50,6 +49,9 @@ function populatePostsContainer(postsData) {
     // Loop through the posts data with images and create HTML for each post
     postsWithImages.forEach((post) => {
         const postElement = createPostElement(post);
+        const postId = post.id;
+        postElement.addEventListener("click", createPostClickHandler(post, postId));
+
         postsContainer.appendChild(postElement);
     });
 }
@@ -97,6 +99,13 @@ async function fetchPosts() {
     } catch (error) {
         console.error("Error:", error);
     }
+}
+
+function createPostClickHandler(post, postId) {
+    return function () {
+        const accessToken = localStorage.getItem("accessToken");
+        window.location.href = `/user/view-post/index.html?accessToken=${accessToken}&postId=${postId}`;
+    };
 }
 
 // Attach an event listener to load and fetch/display posts when the page loads
