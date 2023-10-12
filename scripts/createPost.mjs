@@ -1,4 +1,5 @@
 import { API_URLS } from "./constants.mjs";
+import { getPost } from "./getPost.mjs"
 let postId;
 let viewPostButton; 
 let errorMessage; 
@@ -52,7 +53,6 @@ function displayErrorMessage(message) {
 
 // ... (rest of the code)
 
-
 function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -77,12 +77,17 @@ function handleFormSubmit(event) {
                 displaySuccessMessage("Post created!");
 
                 viewPostButton.addEventListener("click", () => {
-
                     if (postId) {
-                        // Construct the URL for the post based on the ID
-                        const postURL = `${API_URLS.POSTS}/${postId}`;
-                        // Navigate to the post's URL
-                        window.location.href = postURL;
+                        const accessToken = localStorage.getItem("accessToken");
+                        getPost(accessToken, postId)
+                            .then((postData) => {
+                                // Handle displaying the post data, e.g., update the UI with the post content
+                                console.log("Fetched post data:", postData);
+                            })
+                            .catch((error) => {
+                                console.error("Error fetching post data:", error.message);
+                                // Handle unauthorized access or other errors
+                            });
                     }
                 });
             } else {
