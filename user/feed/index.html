@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover all the posts on Be:Friend!" />
+    <title>Discover | Be:Friend</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script defer type="module" src="../../scripts/main.mjs"></script>
+    <script defer type="module" src="../../scripts/doFetch.mjs"></script>
+    <script defer type="module" src="../../scripts/feed.mjs" ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg mb-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">Be:Friend</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/user/feed/"
+                >Discover</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/profile/">My posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/create-post/">Create Post</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </div>
+    <main>
+      <div class="container p-4 rounded-3">
+        <div class="row py-4">
+          <div class="col-12"><h1>Discover</h1></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-8">
+            <button class="btn btn-primary mb-4 mx-2">All Posts</button>
+            <button class="btn btn-primary text-white mb-4 mx-2 disabled">Popular</button>
+            <button class="btn btn-primary text-white mb-4 mx-2 disabled">New</button>
+          </div>  
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                        <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search"  aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>    
+          </div>
+        </div>
+        <div class="row g-4 mb-5">
+          <div id="posts-container" class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="container">
+      <footer class="py-3 my-4">
+        <div class="justify-content-center border-bottom pb-3 mb-3">
+        </div>
+        <p class="text-center ">© 2023 Be:Friend</p>
+      </footer>
+    </div>
+  </body>
+</html>
