@@ -10720,13 +10720,13 @@ body {
   background-image: url(/images/111.jpg);
 }
 
-.landing.box h1, .landing.box .h1 {
+.landing.box h1, .landing.box .h1, .login.box h1, .login.box .h1 {
   font-size: 8rem;
   font-family: "DIN Condensed", serif;
 }
 
-.create-post.box h1, .create-post.box .h1, .login.box h1, .login.box .h1 {
-  font-size: 9rem;
+.create-post.box h1, .create-post.box .h1 {
+  font-size: 5rem;
   font-family: "DIN Condensed", serif;
 }
 
@@ -10751,6 +10751,12 @@ body {
   object-fit: cover;
 }
 
+.view-post img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
 .btn {
   color: white;
 }
@@ -10760,7 +10766,7 @@ body, nav {
   color: white;
 }
 
-.register-form, .login-form {
+.register-form, .login-form, .new-post-form {
   background-color: rgba(9, 7, 65, 0.9450980392);
 }
 
@@ -10770,6 +10776,10 @@ body, nav {
 
 #registration-success-message, #login-button, #registration-error, .register-warning {
   display: none;
+}
+
+#view-post-container img {
+  max-height: 80%;
 }
 
 /*# sourceMappingURL=styles.css.map */
