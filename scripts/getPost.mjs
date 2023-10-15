@@ -1,4 +1,3 @@
-// getPost.mjs
 import { API_URLS } from "./constants.mjs";
 
 export async function getPost(accessToken, postId) {

@@ -1,6 +1,7 @@
 import { fetchData } from "./doFetch.mjs";
 import { API_URLS } from "./constants.mjs";
-import { createPostElement } from "./feed.mjs"; 
+import { createPostElement } from "./feed.mjs";
+
 let allPosts = [];
 
 async function fetchPostsAndSearch() {
@@ -64,7 +65,6 @@ function updateDisplayedPosts(filteredPosts) {
     }
 }
 
-
 function createPostClickHandler(post, postId) {
     return function () {
         const accessToken = localStorage.getItem("accessToken");
@@ -72,4 +72,4 @@ function createPostClickHandler(post, postId) {
     };
 }
 
-window.addEventListener("load", fetchPostsAndSearch); 
+window.addEventListener("load", fetchPostsAndSearch);

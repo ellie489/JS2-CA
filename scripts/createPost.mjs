@@ -4,7 +4,6 @@ let postId;
 let viewPostButton; 
 let errorMessage; 
 
-// Function to create a new post
 async function createPost(accessToken, postData) {
     const headers = {
         Authorization: `Bearer ${accessToken}`,
@@ -29,8 +28,8 @@ async function createPost(accessToken, postData) {
 }
 
 function displaySuccessMessage(message) {
-    // Create a success message element   
-    viewPostButton = document.createElement("button"); // Assign viewPostButton
+    
+    viewPostButton = document.createElement("button"); 
     viewPostButton.classList.add("btn", "btn-lg", "btn-secondary", "mb-3");
     viewPostButton.textContent = "View Post";
 
@@ -46,17 +45,17 @@ function displaySuccessMessage(message) {
 }
 
 function displayErrorMessage(message) {
-    errorMessage = document.getElementById("post-create-error"); // Assign errorMessage
+    errorMessage = document.getElementById("post-create-error"); 
     errorMessage.classList.add("alert", "alert-danger");
     errorMessage.textContent = message;
 }
 
-// ... (rest of the code)
+
 
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    // Get user inputs from the form
+ 
     const photoUrl = document.getElementById("photoUrl").value;
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
@@ -81,31 +80,30 @@ function handleFormSubmit(event) {
                         const accessToken = localStorage.getItem("accessToken");
                         getPost(accessToken, postId)
                             .then((postData) => {
-                                // Handle displaying the post data, e.g., update the UI with the post content
+                              
                                 console.log("Fetched post data:", postData);
                                 window.location.href = `/user/view-post/index.html?accessToken=${accessToken}&postId=${postId}`;
                             })
                             .catch((error) => {
                                 console.error("Error fetching post data:", error.message);
-                                // Handle unauthorized access or other errors
+                               
                             });
                     }
                 });
             } else {
-                // Handle the case where the API response indicates an error.
+              
                 console.error("Failed to create a new post:", response.message);
-                // Provide feedback to the user, e.g., display an error message.
+              
                 displayErrorMessage("Failed to create a new post. Please try again.");
             }
         })
         .catch((error) => {
             console.error("Error:", error.message);
-            // Handle any other errors, e.g., network issues.
             displayErrorMessage("An error occurred. Please try again.");
         });
 }
 
-// Attach the form submission event listener
+
 document.addEventListener("DOMContentLoaded", () => {
     const createPostForm = document.getElementById("create-post-form");
     if (createPostForm) {

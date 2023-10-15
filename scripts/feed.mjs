@@ -31,7 +31,7 @@ export function createPostElement(post) {
     return postContainer;
 }
 
-function populatePostsContainer(postsData) {
+export function populatePostsContainer(postsData) {
     const postsContainer = document.getElementById("posts-container");
     postsContainer.innerHTML = ""; // Clear any existing content
     postsData.forEach((post) => {
@@ -103,3 +103,4 @@ function createPostClickHandler(post, postId) {
 
 window.addEventListener("load", fetchPosts);
 
+export { fetchPosts, createPostClickHandler };
