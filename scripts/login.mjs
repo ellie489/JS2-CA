@@ -19,6 +19,9 @@ function getUserInput() {
  * @param {Object} user - The user object containing login data (email and password).
  */
 async function logInUser(user) {
+  const errorMessageElement = document.getElementById("error-message");
+  errorMessageElement.style.display = "none"; // Hide any previous error messages
+
   try {
     const response = await fetch(API_URLS.LOGIN, {
       method: "POST",
@@ -31,23 +34,31 @@ async function logInUser(user) {
     if (response.ok) {
       const data = await response.json();
       const accessToken = data.accessToken;
+      const userName = data.name;
+      console.log(data);
       if (accessToken) {
         // Store the JWT token in localStorage
         localStorage.setItem("accessToken", accessToken);
-        console.log("JWT token stored in localStorage:", accessToken);
+        localStorage.setItem("userName", userName);
+        console.log("JWT token stored in localStorage:", accessToken, userName);
 
         // Redirect to the feed page
-        window.location.href = "../feed"; // Replace with the actual feed page URL
+        window.location.href = "../feed";
       } else {
         console.error("JWT token not found in the API response");
+        errorMessageElement.textContent = "Login failed. Please try again.";
+        errorMessageElement.style.display = "block"; // Show the error message
       }
     } else {
       // Login failed
-      // You can display an error message or handle the failure as needed.
-      console.error("Login failed");
+      // Display an error message to the user
+      errorMessageElement.textContent = "Invalid email or password. Please try again.";
+      errorMessageElement.style.display = "block"; // Show the error message
     }
   } catch (error) {
     console.error("Error:", error);
+    errorMessageElement.textContent = "An error occurred. Please try again.";
+    errorMessageElement.style.display = "block"; // Show the error message
   }
 }
 
@@ -55,8 +66,8 @@ async function logInUser(user) {
  * Clears any existing error messages.
  */
 function clearErrorMessage() {
-  // Code to clear error messages goes here
-  // You can select the error message element and clear its content or hide it.
+  const errorMessageElement = document.getElementById("error-message");
+  errorMessageElement.style.display = "none"; // Hide the error message
 }
 
 /**
