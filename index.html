@@ -13,7 +13,6 @@
       defer
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
-    <script defer type="module" src="/scripts/main.mjs"></script>
     <script defer type="module" src="/scripts/register.mjs"></script>
   </head>
   <body>
@@ -53,13 +52,13 @@
       <div class="container d-flex justify-content-center align-items-center">
         <div class="row rounded-4 p-4 shadow landing box">
           <div
-            class="col-md-7 rounded-4 justify-content-center align-items-center flex-column left-box"
+            class="col-md-8 col-lg-6 rounded-4 justify-content-center align-items-center flex-column left-box"
           >
             <h1>Welcome to Be:Friend</h1>
             <p>The social platform you never knew you needed.</p>
           </div>
           <div
-            class="register-form col-md-5 right-box text-white rounded-4 p-4"
+            class="register-form col-md-8 col-lg-6 right-box text-white rounded-4 p-4"
           >
             <h2 class="mb-4">Join our comminity now</h2>
             <form id="registration-form" class="mb-3">
@@ -79,7 +78,7 @@
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
                   id="password"
                   required

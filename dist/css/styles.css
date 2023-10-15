@@ -10721,7 +10721,7 @@ body {
 }
 
 .landing.box h1, .landing.box .h1, .login.box h1, .login.box .h1 {
-  font-size: 8rem;
+  font-size: 7rem;
   font-family: "DIN Condensed", serif;
 }
 
@@ -10774,7 +10774,7 @@ body, nav {
   background-color: darkblue;
 }
 
-#registration-success-message, #login-button, #registration-error, .register-warning {
+#registration-success-message, #login-button, #registration-error, .register-warning, #error-message {
   display: none;
 }
 
