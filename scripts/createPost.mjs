@@ -83,8 +83,7 @@ function handleFormSubmit(event) {
                             .then((postData) => {
                                 // Handle displaying the post data, e.g., update the UI with the post content
                                 console.log("Fetched post data:", postData);
-                                const postURL = `${API_URLS.POSTS}/${postId}`;
-                                window.location.href = postURL;
+                                window.location.href = `/user/view-post/index.html?accessToken=${accessToken}&postId=${postId}`;
                             })
                             .catch((error) => {
                                 console.error("Error fetching post data:", error.message);
