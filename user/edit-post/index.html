@@ -43,16 +43,33 @@
       </div>
     </nav>
     <main>
-      <h1>Edit Post</h1>
-      <form id="edit-post-form">
-        <label for="edit-title">Title:</label>
-        <input type="text" id="edit-title" />
-        <label for="edit-photo">Photo Url:</label>
-        <input type="text" id="edit-photo" />
-        <label for="edit-body">Body:</label>
-        <textarea id="edit-body"></textarea>
-        <button type="submit">Save</button>
-      </form>
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row rounded-4 p-4 shadow create-post box">
+          <div id="create-post-container" class="new-post-form col-12 col-lg-8 right-box rounded-4 p-4 mx-auto">
+            <h1 class="mb-4">Edit post</h1>
+            <form id="edit-post-form">
+              <div class="my-3">
+                <label for="edit-photo" class="form-label">Photo url:</label>
+                <input type="url" class="form-control" id="edit-photo" />
+              </div>
+              <div class="my-3">
+                <label for="edit-title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="edit-title" />
+              </div>
+              <div class="my-3">
+                <label for="edit-body" class="form-label">Description:</label>
+                <textarea class="form-control" id="edit-body" rows="3"></textarea>
+              </div>
+            
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            <div id="post-create-success"></div>
+          </div>          <div
+            class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
+          >        
+          </div>
+        </div>
+      </div>
     </main>
     <div class="container fixed-bottom">
       <footer class="py-3 my-4">
