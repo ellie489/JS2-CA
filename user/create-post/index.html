@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create a new post on Be:Friend" />
+    <title>New Post | Be:Friend</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script defer type="module" src="../../scripts/createPost.mjs"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top navbar-expand-lg mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">Be:Friend</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/user/feed/">Discover</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/profile/">My posts</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/user/create-post/"
+                >Create Post</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="row rounded-4 p-4 shadow create-post box">
+          <div id="create-post-container" class="new-post-form col-12 col-lg-8 right-box rounded-4 p-4 mx-auto">
+            <h1 class="mb-4">Create new post</h1>
+            <form id="create-post-form">
+              <div class="my-3">
+                <label for="photoUrl" class="form-label">Photo url:</label>
+                <input type="url" class="form-control" id="photoUrl" required />
+              </div>
+              <div class="my-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title" required />
+              </div>
+              <div class="my-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+              </div>
+            
+              <button type="submit" class="btn btn-primary">Publish</button>
+            </form>
+            <div id="post-create-success"></div>
+          </div>          <div
+            class="col-md-6 rounded-4 justify-content-center align-items-center flex-column left-box"
+          >        
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="container fixed-bottom">
+      <footer class="py-3 my-4">
+        <div class="justify-content-center border-bottom pb-3 mb-3"></div>
+        <p class="text-center">© 2023 Be:Friend</p>
+      </footer>
+    </div>
+  </body>
+</html>
